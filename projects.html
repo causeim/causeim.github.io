@@ -23,6 +23,8 @@
       </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#venture">Venture</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="index.html#contact">Contact</a></li>
@@ -38,24 +40,26 @@
 
   <main>
     <div class="project-header">
-      <div class="eyebrow">Active Project</div>
-      <h1>Toward Most Agile and Cost Effective Life-sized Robot</h1>
+      <div class="eyebrow">Phase 1 complete &middot; Manuscript ready &middot; Bipedal prototype under construction</div>
+      <h1>Spatial Five-bar Mechanism (SFM)</h1>
       <p class="subtitle">
-        A <strong>Coaxial Spherical Parallel Mechanism</strong> that centralizes four actuators at
-        the pelvis and distributes load equally across them — quadrupling effective strength and
-        extending gear life 64&times; without scaling up the motors.
+        A <strong>4-DOF parallel mechanism</strong> built from two <em>Coaxial and Symmetric 5R
+        Spherical Parallel Mechanism (CoSy 5R-SPM)</em> sets that share a common rotation axis.
+        The radial-sum topology yields closed-form kinematics, broadly uniform load sharing across
+        four actuators, a workspace reaching ≈92% of its enclosing sphere, and unbounded coaxial
+        rotation — designed for life-sized bipedal legs and high-payload arms.
       </p>
       <div class="badges">
-        <span class="badge accent">Parallel Mechanism</span>
-        <span class="badge">Bipedal Locomotion</span>
-        <span class="badge">Manipulator</span>
-        <span class="badge">Hardware Design</span>
+        <span class="badge accent">4-DOF Parallel Mechanism</span>
+        <span class="badge">Coaxial 5R-SPM</span>
+        <span class="badge">Bipedal Leg</span>
+        <span class="badge">Industrial Arm</span>
       </div>
 
       <!-- Hero: full-body biped portrait render -->
-      <figure class="figure hero-photo">
-        <img src="assets/images/hero-biped.jpg" alt="Full-body bipedal prototype render" loading="eager">
-        <figcaption>Full-body bipedal prototype — pelvis-mounted actuator stack, parallel carbon-fiber links.</figcaption>
+      <figure class="figure hero-photo transparent-bg">
+        <img src="assets/images/hero-biped.png" alt="Full-body bipedal prototype render" loading="eager">
+        <figcaption>Bipedal lower-body prototype based on two SFMs — all eight active joints sit at the pelvis in coaxial arrangement.</figcaption>
       </figure>
     </div>
 
@@ -66,28 +70,28 @@
       </div>
       <div class="specs">
         <div class="spec">
-          <div class="spec-label">Actuators / Leg</div>
+          <div class="spec-label">Degrees of Freedom</div>
           <div class="spec-value">4</div>
         </div>
         <div class="spec">
-          <div class="spec-label">Effective Strength</div>
-          <div class="spec-value">4&times;</div>
+          <div class="spec-label">Active Joints</div>
+          <div class="spec-value">4</div>
         </div>
         <div class="spec">
-          <div class="spec-label">Per-Gear Load</div>
-          <div class="spec-value">1/4</div>
+          <div class="spec-label">Workspace / Enclosing Sphere</div>
+          <div class="spec-value">~92%</div>
         </div>
         <div class="spec">
-          <div class="spec-label">Gear Life Gain</div>
-          <div class="spec-value">64&times;</div>
+          <div class="spec-label">Coaxial Rotation</div>
+          <div class="spec-value">Unbounded</div>
         </div>
         <div class="spec">
-          <div class="spec-label">Target Leg Mass</div>
-          <div class="spec-value">&lt; 12 kg</div>
+          <div class="spec-label">Per-Gear Load (vertical, LDI≈1)</div>
+          <div class="spec-value">~1/4</div>
         </div>
         <div class="spec">
-          <div class="spec-label">Projected Biped Mass</div>
-          <div class="spec-value">~35 kg</div>
+          <div class="spec-label">Gear-Life Upper Bound</div>
+          <div class="spec-value">≤ 64&times;</div>
         </div>
       </div>
     </section>
@@ -98,32 +102,44 @@
         <h2>Overview</h2>
       </div>
       <p>
-        Life-sized legged robots are held back by a hard trade-off: bigger actuators make the limb
-        heavier, which demands even bigger actuators. The <strong>Coaxial Spherical Parallel
-        Mechanism</strong> breaks that cycle by <em>centralizing</em> all four actuators at the
-        pelvis and arranging their output axes coaxially so that every actuator contributes to
-        every direction of motion. Vertical, radial, and lateral load on the end effector is shared
-        equally — turning the "4 actuators per leg" count into real capability rather than mass.
+        Bipedal robots are leaving the lab and moving into long-duty-cycle deployments — warehouses,
+        factories, service environments. Under those conditions <em>reducer fatigue life</em>
+        becomes as central to commercial viability as raw performance: harmonic and cycloid gears
+        scale with load to the third (and tenth-third) power, so even modest reductions in peak
+        torque buy outsized service-life gains. The <strong>SFM</strong> takes this leverage as
+        its design driver.
+      </p>
+      <p>
+        The mechanism is built from two <strong>Coaxial and Symmetric 5R-SPM (CoSy 5R-SPM)</strong>
+        sets sharing a common rotation axis. Defining the end-effector position as the
+        <em>radial vector sum</em> of the two outputs lets the full 4-DOF forward / inverse
+        kinematics and the Jacobian be written in closed form as the sum of two independent 2-DOF
+        analyses — a notable simplification for a 4-DOF parallel mechanism. The same closure
+        carries the unbounded-rotation property of single coaxial 5R-SPMs into four degrees of
+        freedom.
       </p>
 
       <div class="callout">
         <p>
-          <strong>Why it matters.</strong> When each gear sees only ¼ of the load, a Wöhler-style
-          fatigue model predicts gear life scales as (1/4)<sup>-3</sup> = <strong>64&times;</strong>.
-          The same mechanism also lets motor and gear sizes shrink — the limb gets lighter while
-          getting stronger.
+          <strong>Three design goals (G1–G3).</strong>
+          <strong>G1</strong> balanced vertical load sharing across the four actuators (quantified
+          by the newly proposed <em>Load Distribution Index</em>, LDI);
+          <strong>G2</strong> a wide range of motion while keeping in-principle unbounded coaxial
+          rotation;
+          <strong>G3</strong> low end-effector impedance — all motors and reducers sit at the base,
+          so reflected rotor inertia does not cascade down the link chain.
         </p>
       </div>
 
       <!-- Real CAD renderings of the mechanism -->
-      <figure class="figure">
-        <img src="assets/images/mechanism-closeup.jpg" alt="Close-up CAD render of the pelvis-mounted actuator stack and carbon-fiber parallel links">
-        <figcaption>Pelvis actuator cluster — four coaxial drives feeding carbon-fiber parallel links.</figcaption>
+      <figure class="figure transparent-bg">
+        <img src="assets/images/mechanism-closeup.png" alt="Close-up CAD render of the SFM pelvis-mounted actuator stack and carbon-fiber parallel links">
+        <figcaption>Pelvis actuator cluster — four coaxial drives feeding carbon-fiber parallel links of two paired CoSy 5R-SPM sets.</figcaption>
       </figure>
 
-      <figure class="figure">
-        <img src="assets/images/leg-module-views.jpg" alt="Three angle views of a single Coaxial SPM leg module">
-        <figcaption>Leg module — three viewing angles of the same Coaxial SPM assembly.</figcaption>
+      <figure class="figure transparent-bg">
+        <img src="assets/images/leg-module-views.png" alt="Three angle views of a single SFM leg module">
+        <figcaption>SFM leg module — three viewing angles of the same assembly.</figcaption>
       </figure>
     </section>
 
@@ -133,28 +149,29 @@
         <h2>Design Principles</h2>
       </div>
       <ul class="feature-list">
-        <li><strong>Coaxial layout</strong> — all four actuator outputs are aligned on a common axis, so every actuator's torque projects onto the vertical direction during stance.</li>
-        <li><strong>Equal load distribution</strong> — vertical, radial, and lateral loads on the end effector are divided across the four actuators rather than carried by one.</li>
-        <li><strong>Centralized mass at the pelvis</strong> — lower limb inertia makes swing faster and modeling errors smaller for whole-body control.</li>
-        <li><strong>Thermal management</strong> — all heat-generating elements live in one location, simplifying cooling and cable routing.</li>
-        <li><strong>Analytic kinematics</strong> — despite being a parallel mechanism, the closed-form solution is as simple as a serial link, keeping control cheap.</li>
+        <li><strong>Radial-sum topology (paired CoSy 5R-SPM)</strong> — the end-effector position is the radial sum of the two CoSy 5R-SPM outputs; this closure lets each set be analyzed independently and reduces 4-DOF kinematics to two paired 2-DOF problems.</li>
+        <li><strong>Coaxial input axes</strong> — all four input axes share one rotation axis, so the SFM inherits the unbounded-coaxial-rotation property of single coaxial 5R-SPMs and extends it to 4 DOFs.</li>
+        <li><strong>All rotors at the base</strong> — placing every motor and reducer at the base eliminates the cascaded reflected rotor inertia that plagues serial chains; what reaches the end-effector is the link inertia alone.</li>
+        <li><strong>Three local performance indices</strong> — the Local Conditioning Index (LCI), Torque Amplification Ratio (TAR), and the newly introduced Load Distribution Index (LDI) — make G1–G3 quantitative pose by pose, with explicit ties to the Global Conditioning Index and Yoshikawa's manipulability.</li>
+        <li><strong>Closed-form Jacobian and singularity analysis</strong> — because each CoSy 5R-SPM has analytic kinematics, the SFM Jacobian and its singularity loci follow in closed form; control stays cheap despite the parallel topology.</li>
       </ul>
     </section>
 
-    <!-- NEW: Gear life section -->
+    <!-- Gear life section -->
     <section id="gear-life">
       <div class="section-title">
         <h2>Gear-life Scaling</h2>
       </div>
       <p>
-        The load-sharing effect compounds through the gear's fatigue curve. A common Wöhler-style
-        S-N model for rolling-contact fatigue goes as N ∝ σ<sup>-3</sup>. Reducing the per-gear
-        stress to ¼ therefore multiplies the predicted cycles-to-failure by
-        (¼)<sup>-3</sup>&nbsp;=&nbsp;<strong>64</strong>. The same mechanism that quadruples
-        effective strength also buys roughly two orders of magnitude of service life without a
-        beefier actuator.
+        Harmonic and cycloid gears — the two reducer families most common in bipedal robots — have
+        expected lives that scale inversely with the third (and tenth-third) power of the applied
+        torque. In poses where the SFM's LDI approaches unity, each of the four reducers carries
+        roughly a quarter of the end-effector load, which under the cubic torque–life relation
+        translates to an <strong>upper bound of (¼)<sup>−3</sup>&nbsp;=&nbsp;64×</strong> in
+        service life. This is an <em>ideal upper bound</em> attained only where the LDI reaches
+        unity; the effective factor in practice is smaller, but still substantial enough to make
+        the SFM a strong candidate for long-duty-cycle robots where maintenance windows are scarce.
       </p>
-
     </section>
 
     <!-- Performance Envelope (real measurement / simulation plots) -->
@@ -202,13 +219,13 @@
         high swing rates — tracking RMS stays tight across the six-second test window.
       </p>
 
-      <figure class="figure">
-        <img src="assets/images/leg-stride-sequence.jpg" alt="Five side-view poses of a single leg across one stride">
+      <figure class="figure transparent-bg">
+        <img src="assets/images/leg-stride-sequence.png" alt="Five side-view poses of a single leg across one stride">
         <figcaption>Leg stride — five poses across one cycle of the gait primitive.</figcaption>
       </figure>
 
-      <figure class="figure">
-        <img src="assets/images/biped-poses.jpg" alt="Four side-view configurations of the full biped assembly">
+      <figure class="figure transparent-bg">
+        <img src="assets/images/biped-poses.png" alt="Four side-view configurations of the full biped assembly">
         <figcaption>Full biped — four representative stance/swing configurations.</figcaption>
       </figure>
 
@@ -218,57 +235,175 @@
       </figure>
     </section>
 
-    <!-- Video showcase -->
-    <section id="video">
+    <!-- Demo clips (link-out to YouTube) -->
+    <section id="videos">
       <div class="section-title">
-        <h2>Prototype in Motion</h2>
+        <h2>Demo Clips</h2>
+        <span class="count">8</span>
       </div>
-      <p class="section-lead">Short showcase videos from the legacy project site.</p>
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/qmU83sIORDQ" title="CauseIM robot demo 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/vlBgMg9WFfA" title="CauseIM robot demo 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p class="section-lead">Short demo videos hosted on YouTube. Click any tile to watch in a new tab.</p>
+
+      <div class="video-grid">
+        <a class="video-card" href="https://youtube.com/shorts/qmU83sIORDQ" target="_blank" rel="noopener" aria-label="YouTube Short — open in new tab">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/qmU83sIORDQ/hqdefault.jpg" alt="">
+            <span class="play-icon" aria-hidden="true">▶</span>
+            <span class="video-tag">Short</span>
+          </div>
+        </a>
+        <a class="video-card" href="https://youtube.com/shorts/zIKMDVO86j0" target="_blank" rel="noopener" aria-label="YouTube Short — open in new tab">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/zIKMDVO86j0/hqdefault.jpg" alt="">
+            <span class="play-icon" aria-hidden="true">▶</span>
+            <span class="video-tag">Short</span>
+          </div>
+        </a>
+        <a class="video-card" href="https://youtube.com/shorts/vlBgMg9WFfA" target="_blank" rel="noopener" aria-label="YouTube Short — open in new tab">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/vlBgMg9WFfA/hqdefault.jpg" alt="">
+            <span class="play-icon" aria-hidden="true">▶</span>
+            <span class="video-tag">Short</span>
+          </div>
+        </a>
+        <a class="video-card" href="https://youtube.com/shorts/-yPBl1a8oKE" target="_blank" rel="noopener" aria-label="YouTube Short — open in new tab">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/-yPBl1a8oKE/hqdefault.jpg" alt="">
+            <span class="play-icon" aria-hidden="true">▶</span>
+            <span class="video-tag">Short</span>
+          </div>
+        </a>
+        <a class="video-card" href="https://youtube.com/shorts/ULXfkazXvFE" target="_blank" rel="noopener" aria-label="YouTube Short — open in new tab">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/ULXfkazXvFE/hqdefault.jpg" alt="">
+            <span class="play-icon" aria-hidden="true">▶</span>
+            <span class="video-tag">Short</span>
+          </div>
+        </a>
+        <a class="video-card" href="https://youtu.be/uv-Qp8p8Jqg" target="_blank" rel="noopener" aria-label="YouTube video — open in new tab">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/uv-Qp8p8Jqg/hqdefault.jpg" alt="">
+            <span class="play-icon" aria-hidden="true">▶</span>
+          </div>
+        </a>
+        <a class="video-card" href="https://youtu.be/lr7fYkM-mhc" target="_blank" rel="noopener" aria-label="YouTube video — open in new tab">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/lr7fYkM-mhc/hqdefault.jpg" alt="">
+            <span class="play-icon" aria-hidden="true">▶</span>
+          </div>
+        </a>
+        <a class="video-card" href="https://youtu.be/5nsAHLAjroA" target="_blank" rel="noopener" aria-label="YouTube video — open in new tab">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/5nsAHLAjroA/hqdefault.jpg" alt="">
+            <span class="play-icon" aria-hidden="true">▶</span>
+          </div>
+        </a>
       </div>
     </section>
 
-    <!-- Applications -->
+    <!-- Applications (paper's two case studies) -->
     <section id="applications">
       <div class="section-title">
-        <h2>Applications</h2>
+        <h2>Application Case Studies</h2>
       </div>
+      <p class="section-lead">
+        The paper compares the SFM against a matched 4-DOF serial manipulator and walks through
+        two concrete scenarios where its properties translate into practical advantage.
+      </p>
 
       <article class="card">
-        <h3>1. Bipedal Robot</h3>
+        <h3>1. Industrial Robotic Arm</h3>
         <p>
-          Each leg is a 4-DOF Coaxial SPM. Because mass is centralized near the body, whole-body
-          dynamics have lower modeling error and control can run at short computation horizons
-          despite the parallel structure. Continuous Ground Reaction Force in some regions reaches
-          twice the projected body weight — giving useful margin for jumping and perturbation
-          recovery.
+          With the coaxial joint <em>vertical</em>, gravitational load is shared evenly across the
+          four reducers throughout the workspace, so they age at comparable rates and synchronized
+          replacement cycles become feasible. With the coaxial joint aligned to the
+          <em>frontal axis</em>, the four actuator outputs sum directly along the vertical
+          direction and each reducer carries ~1/4 of the end-effector load — buying the upper-bound
+          ≤64× reducer-life extension where the LDI reaches unity. Either configuration suits
+          long-duty-cycle robots where maintenance windows are scarce.
         </p>
         <div class="badges" style="margin-top: 0.5rem;">
-          <span class="badge">4 DOF / leg</span>
-          <span class="badge">GRF &gt; 2&times; body weight</span>
-          <span class="badge">~35 kg biped target</span>
+          <span class="badge">High payload</span>
+          <span class="badge">Tall workspace</span>
+          <span class="badge">Synchronized maintenance</span>
         </div>
       </article>
 
       <article class="card">
-        <h3>2. Robot Arm &amp; Manipulator</h3>
+        <h3>2. Bipedal Robot Leg</h3>
         <p>
-          Using the same mechanism as a manipulator, payload is amplified 4&times; versus a
-          single-actuator baseline while moving-part mass is reduced. Capacity exceeds 40 kg across
-          the full workspace. The design favors serviceability: only 14 bolts to disassemble the
-          arm, and 6 to remove an actuator set.
+          A bipedal leg must produce vertical ground-reaction forces and velocities well above
+          body weight, demands a broad workspace for obstacle climbing and acrobatic motions, and
+          needs a dedicated yaw DOF — each maps onto an SFM property documented in the paper.
+          A pair of SFMs implementing both legs places <strong>all eight active joints at the
+          base in a coaxial arrangement</strong>; under dynamic motion, the gyroscopic torque of
+          the high-speed rotors becomes both easier to estimate and partially self-canceling
+          within limits. A bipedal lower-body prototype based on this configuration is currently
+          under construction.
         </p>
         <div class="badges" style="margin-top: 0.5rem;">
-          <span class="badge">&gt; 40 kg payload</span>
-          <span class="badge">4&times; payload amplification</span>
-          <span class="badge">14-bolt teardown</span>
+          <span class="badge">All rotors at base</span>
+          <span class="badge">Dedicated yaw DOF</span>
+          <span class="badge">Prototype building</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- Earlier projects (research lineage) -->
+    <section id="earlier-projects">
+      <div class="section-title">
+        <h2>Earlier Projects</h2>
+      </div>
+      <p class="section-lead">
+        The SFM didn't appear out of nowhere — it stands on a decade of work on knee-assist
+        exoskeletons, modular high-torque actuators, and parallel-mechanism manipulators. Two
+        earlier project lines that directly fed into it:
+      </p>
+
+      <article class="card">
+        <h3>CoSMo &middot; E-CoSMo &middot; CoSMo-Arm — Concentrically Stacked Modular Actuator family</h3>
+        <p>
+          A family of high-torque-density actuator modules with <em>forced-air cooling</em> and
+          coaxial output stages, designed for multi-DoF robots. The lineage:
+          <strong>CoSMo</strong> (single-actuator module, MDPI 2018), <strong>E-CoSMo</strong>
+          (4-DoF robotic link, IROS 2019), and the <strong>7-DoF CoSMo-Arm</strong> manipulator
+          (IROS 2020). The thermal management and load-distribution principles validated here
+          flow directly into the current SFM.
+        </p>
+        <div class="badges" style="margin-top: 0.5rem;">
+          <span class="badge">Modular actuator</span>
+          <span class="badge">Forced air cooling</span>
+          <span class="badge">7-DoF manipulator</span>
+          <span class="badge">High torque density</span>
+        </div>
+        <div class="pub-actions" style="margin-top: 0.85rem;">
+          <a href="publications.html#y-2018" class="pub-tag">CoSMo (MDPI 2018) &rarr;</a>
+          <a href="publications.html#y-2019" class="pub-tag">E-CoSMo (IROS 2019) &rarr;</a>
+          <a href="publications.html#y-2020" class="pub-tag">CoSMo-Arm (IROS 2020) &rarr;</a>
         </div>
       </article>
 
+      <article class="card">
+        <h3>KARE-1 — Knee-Assistive Robotic Exoskeleton</h3>
+        <p>
+          A wearable knee-assist exoskeleton for industrial field workers, built on a
+          <em>conditionally singular</em> 4-bar mechanism: the singular configuration is exploited
+          (rather than avoided) to mechanically lock the joint when the wearer needs static
+          support, then released for swing. Key contributions span hybrid locking design, control
+          algorithm for assist/free transitions, and field validation. Earlier, IECON-2016
+          version explored the singular-configuration concept; the MDPI-2020 version pushed it
+          through to industrial deployment.
+        </p>
+        <div class="badges" style="margin-top: 0.5rem;">
+          <span class="badge">Exoskeleton</span>
+          <span class="badge">Singular mechanism</span>
+          <span class="badge">Hybrid locking</span>
+          <span class="badge">Industrial</span>
+        </div>
+        <div class="pub-actions" style="margin-top: 0.85rem;">
+          <a href="publications.html#y-2016" class="pub-tag">IECON 2016 &rarr;</a>
+          <a href="publications.html#y-2020" class="pub-tag">MDPI 2020 &rarr;</a>
+        </div>
+      </article>
     </section>
 
     <!-- Related publication -->
@@ -277,35 +412,17 @@
         <h2>Related Publication</h2>
       </div>
       <article class="card pub">
-        <div class="pub-thumb placeholder" aria-hidden="true">TBD</div>
+        <div class="pub-thumb placeholder" aria-hidden="true">SFM</div>
         <div class="pub-body">
-          <h3>A Coaxial Spherical Parallel Mechanism for Agile Life-sized Robotics</h3>
+          <h3>Kinematic and Load-Distribution Analysis of a 4-DOF Parallel Mechanism Built from Paired Coaxial Spherical Five-bar Sets</h3>
           <p class="pub-authors"><span class="me">Jaeho Noh</span></p>
-          <p class="pub-venue">Manuscript in preparation &middot; 2026</p>
+          <p class="pub-venue">Manuscript &middot; 2026</p>
           <div class="pub-actions">
-            <span class="pub-tag in-progress">In preparation</span>
-            <a href="publications.html" class="pub-tag">Details &rarr;</a>
+            <span class="pub-tag">Manuscript ready</span>
+            <a href="publications.html#y-2026" class="pub-tag">Details &rarr;</a>
           </div>
         </div>
       </article>
-    </section>
-
-    <!-- Contact CTA -->
-    <section id="contact-cta">
-      <div class="section-title">
-        <h2>Want to know more?</h2>
-      </div>
-      <p>
-        The hardware, videos, and write-ups are being actively updated. If you're interested in
-        collaborating, integrating the mechanism into your platform, or just want a deeper
-        technical walkthrough, send an email.
-      </p>
-      <div class="hero-links" style="margin-top:1rem;">
-        <a class="icon-link" href="mailto:causeim@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          causeim@gmail.com
-        </a>
-      </div>
     </section>
   </main>
 
@@ -313,6 +430,4 @@
     <p>&copy; <span id="year">2026</span> CauseIM &middot; <a href="https://sites.google.com/view/causeim" target="_blank" rel="noopener">Legacy site</a></p>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+  <script src="assets/js/main.

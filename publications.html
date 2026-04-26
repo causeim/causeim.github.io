@@ -23,6 +23,8 @@
       </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#venture">Venture</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="publications.html" class="active">Publications</a></li>
         <li><a href="index.html#contact">Contact</a></li>
@@ -41,9 +43,17 @@
       <div class="eyebrow">Publications</div>
       <h1>Papers</h1>
       <p class="subtitle">
-        Research output, in reverse chronological order. Items marked <em>In preparation</em> will
-        be linked to a preprint and code once submitted.
+        Research output across robot mechanism design, exoskeletons, and high-power actuators —
+        reverse chronological. The 2026 manuscript is ready and will be linked to preprint and
+        code once submitted.
       </p>
+      <div class="badges">
+        <span class="badge accent">2 journal articles</span>
+        <span class="badge">3 international conferences</span>
+        <span class="badge">4 domestic conferences</span>
+        <span class="badge">1 manuscript ready</span>
+        <span class="badge">37 patents</span>
+      </div>
     </div>
 
     <!-- 2026 -->
@@ -53,49 +63,56 @@
       </div>
 
       <article class="card pub">
-        <div class="pub-thumb placeholder" aria-hidden="true">
-          <span>Figure<br/>coming soon</span>
-        </div>
+        <div class="pub-thumb placeholder" aria-hidden="true">SFM</div>
         <div class="pub-body">
-          <h3>A Coaxial Spherical Parallel Mechanism for Agile Life-sized Robotics</h3>
+          <h3>Kinematic and Load-Distribution Analysis of a 4-DOF Parallel Mechanism Built from Paired Coaxial Spherical Five-bar Sets</h3>
           <p class="pub-authors">
             <span class="me">Jaeho Noh</span>
           </p>
-          <p class="pub-venue">Manuscript in preparation &middot; target venue TBD &middot; 2026</p>
+          <p class="pub-venue">Manuscript &middot; target venue TBD &middot; 2026</p>
           <p class="pub-abstract">
-            This paper introduces a <strong>Coaxial Spherical Parallel Mechanism (Coaxial
-            SPM)</strong> designed for life-sized legged platforms. The mechanism places four
-            actuators at the pelvis and arranges their outputs coaxially so that vertical, radial,
-            and lateral end-effector loads are distributed equally across every actuator. I derive
-            the analytic kinematics, quantify the 4&times; effective strength gain and the
-            64&times; gear-life extension that follow from the load-sharing model, and validate
-            the design on a bipedal platform with a target body mass of roughly 35&nbsp;kg. I
-            further show that the same kinematic family applies to heavy-payload manipulation — a
-            40&nbsp;kg workspace-wide payload on the same limb — illustrating that one well-chosen
-            mechanism can unify agile locomotion and industrial-scale manipulation.
+            This paper proposes a <strong>Spatial Five-bar Mechanism (SFM)</strong>: a 4-DOF
+            parallel mechanism built from two <em>Coaxial and Symmetric 5R Spherical Parallel
+            Mechanism (CoSy 5R-SPM)</em> sets that share a common rotation axis. Together with
+            the mechanism, I introduce a kinematic-performance framework tailored to its intended
+            use, formalizing three design goals — balanced vertical load sharing, a wide range of
+            motion, and low end-effector impedance — and three local indices to quantify them:
+            the <strong>Local Conditioning Index (LCI)</strong>, the <strong>Torque Amplification
+            Ratio (TAR)</strong>, and a newly proposed <strong>Load Distribution Index
+            (LDI)</strong>. The SFM's architecture is formalized as the radial vector sum of two
+            CoSy 5R-SPM outputs, which lets the forward / inverse kinematics and the Jacobian be
+            derived in closed form as the sum of two independent 2-DOF analyses. Evaluating LCI,
+            TAR, and LDI across the workspace shows that the SFM (i) reaches roughly 92% of its
+            enclosing sphere with in-principle unbounded coaxial rotation, (ii) shares
+            end-effector loads broadly evenly among its four actuators, and (iii) structurally
+            eliminates cascaded reflected rotor inertia at the end-effector. The mechanism is
+            compared against a matched 4-DOF serial manipulator and applied to two case studies —
+            an industrial robotic arm and a bipedal robot leg.
           </p>
           <div class="pub-actions">
-            <span class="pub-tag in-progress">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              In preparation
-            </span>
-            <span class="pub-tag">Mechanism design</span>
-            <span class="pub-tag">Bipedal locomotion</span>
-            <span class="pub-tag">Manipulation</span>
+            <span class="pub-tag">Manuscript ready</span>
+            <span class="pub-tag">Parallel mechanism</span>
+            <span class="pub-tag">Spherical parallel manipulator</span>
+            <span class="pub-tag">Coaxial five-bar linkage</span>
+            <span class="pub-tag">Kinematic analysis</span>
+            <span class="pub-tag">Load distribution</span>
+            <span class="pub-tag">Bipedal robot</span>
             <a href="projects.html" class="pub-tag">Project page &rarr;</a>
           </div>
 
           <details style="margin-top: 1rem;">
             <summary style="cursor: pointer; color: var(--text-muted); font-size: 0.9rem; font-weight: 500;">
-              BibTeX (placeholder — will be finalized on submission)
+              BibTeX (will be finalized at submission)
             </summary>
             <div class="bibtex" style="margin-top: 0.75rem;">
               <button class="copy-btn" data-copy="bibtex-1">Copy</button>
-<pre id="bibtex-1">@unpublished{noh2026coaxial,
+<pre id="bibtex-1">@unpublished{noh2026sfm,
   author  = {Noh, Jaeho},
-  title   = {A Coaxial Spherical Parallel Mechanism for Agile Life-sized Robotics},
+  title   = {Kinematic and Load-Distribution Analysis of a 4-{DOF}
+             Parallel Mechanism Built from Paired Coaxial Spherical
+             Five-bar Sets},
   year    = {2026},
-  note    = {Manuscript in preparation}
+  note    = {Manuscript}
 }</pre>
             </div>
           </details>
@@ -103,16 +120,201 @@
       </article>
     </section>
 
-    <!-- Placeholder: earlier years -->
-    <section id="y-earlier">
+    <!-- 2020 -->
+    <section id="y-2020">
       <div class="section-title">
-        <h2>Earlier work</h2>
+        <h2>2020</h2>
+      </div>
+
+      <!-- IROS 2020 — CoSMo-Arm -->
+      <article class="card pub">
+        <div class="pub-thumb placeholder" aria-hidden="true">CoSMo-Arm</div>
+        <div class="pub-body">
+          <h3>Introduction to 7-DoF CoSMo-Arm: High Torque Density Manipulator based on CoSMoA and E-CoSMo</h3>
+          <!-- TODO: Replace with full author list when known -->
+          <p class="pub-authors"><span class="me">Jaeho Noh</span>, et&nbsp;al.</p>
+          <p class="pub-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) &middot; 2020</p>
+          <div class="pub-actions">
+            <span class="pub-tag">International conference</span>
+            <span class="pub-tag">Manipulator</span>
+            <span class="pub-tag">High torque density</span>
+            <span class="pub-tag">Parallel mechanism</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- MDPI 2020 — KARE-1 -->
+      <article class="card pub">
+        <div class="pub-thumb placeholder" aria-hidden="true">KARE-1</div>
+        <div class="pub-body">
+          <h3>Knee-Assistive Robotic Exoskeleton (KARE-1) Using a Conditionally Singular Mechanism for Industrial Field Applications</h3>
+          <!-- TODO: Replace with full author list when known -->
+          <p class="pub-authors"><span class="me">Jaeho Noh</span>, et&nbsp;al.</p>
+          <p class="pub-venue">MDPI Applied Sciences (international journal) &middot; 2020</p>
+          <div class="pub-actions">
+            <span class="pub-tag">Journal article</span>
+            <span class="pub-tag">Exoskeleton</span>
+            <span class="pub-tag">Singular mechanism</span>
+            <span class="pub-tag">Industrial</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 2019 -->
+    <section id="y-2019">
+      <div class="section-title">
+        <h2>2019</h2>
+      </div>
+
+      <article class="card pub">
+        <div class="pub-thumb placeholder" aria-hidden="true">E-CoSMo</div>
+        <div class="pub-body">
+          <h3>Novel 4-DoF Robotic Link Mechanism with E-CoSMo, Kinematics Based Torque Analysis</h3>
+          <!-- TODO: Replace with full author list when known -->
+          <p class="pub-authors"><span class="me">Jaeho Noh</span>, et&nbsp;al.</p>
+          <p class="pub-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) &middot; 2019</p>
+          <div class="pub-actions">
+            <span class="pub-tag">International conference</span>
+            <span class="pub-tag">Robotic link mechanism</span>
+            <span class="pub-tag">Kinematics</span>
+            <span class="pub-tag">Torque analysis</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 2018 -->
+    <section id="y-2018">
+      <div class="section-title">
+        <h2>2018</h2>
+      </div>
+
+      <article class="card pub">
+        <div class="pub-thumb placeholder" aria-hidden="true">CoSMo</div>
+        <div class="pub-body">
+          <h3>Design of a Concentrically Stacked Modular Actuator with Forced Air Cooling for Multi-DOF Robotic Systems</h3>
+          <!-- TODO: Replace with full author list when known -->
+          <p class="pub-authors"><span class="me">Jaeho Noh</span>, et&nbsp;al.</p>
+          <p class="pub-venue">MDPI Applied Sciences (international journal) &middot; 2018</p>
+          <div class="pub-actions">
+            <span class="pub-tag">Journal article</span>
+            <span class="pub-tag">Modular actuator</span>
+            <span class="pub-tag">Thermal design</span>
+            <span class="pub-tag">Multi-DOF robotics</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 2016 -->
+    <section id="y-2016">
+      <div class="section-title">
+        <h2>2016</h2>
+      </div>
+
+      <article class="card pub">
+        <div class="pub-thumb placeholder" aria-hidden="true">4-bar</div>
+        <div class="pub-body">
+          <h3>A 4-bar Mechanism Based Knee Assist Robotic Exoskeleton Using Singular Configuration</h3>
+          <!-- TODO: Replace with full author list when known -->
+          <p class="pub-authors"><span class="me">Jaeho Noh</span>, et&nbsp;al.</p>
+          <p class="pub-venue">IEEE Industrial Electronics Society Conference (IECON) &middot; 2016</p>
+          <div class="pub-actions">
+            <span class="pub-tag">International conference</span>
+            <span class="pub-tag">Exoskeleton</span>
+            <span class="pub-tag">4-bar linkage</span>
+            <span class="pub-tag">Singular configuration</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Domestic conferences (Korean) -->
+    <section id="y-domestic">
+      <div class="section-title">
+        <h2>Domestic conferences</h2>
+        <span class="count">4</span>
       </div>
       <p class="section-lead">
-        Earlier write-ups live on the
-        <a href="https://sites.google.com/view/causeim" target="_blank" rel="noopener">legacy project site</a>.
-        As papers migrate here they'll be listed chronologically above.
+        Korean-language conference papers (KSME / KROS / ICROS, 2014–2020).
+        <!-- TODO: confirm exact year/venue for each below -->
       </p>
+
+      <ul class="feature-list">
+        <li><strong>Enhanced Performance of Concentrically Stacked Modular Actuator with Forced Air Cooling</strong> — domestic conference</li>
+        <li><strong>On the Design of a Knee-Assist Robotic Exoskeleton with Hybrid Locking Mechanism</strong> — domestic conference</li>
+        <li><strong>Development of a Knee-Assistive Robotic Exoskeleton for Industrial Applications</strong> — domestic conference</li>
+        <li><strong>On the Study of Control Algorithm for the Knee-Assistive Exoskeleton</strong> — domestic conference</li>
+      </ul>
+    </section>
+
+    <!-- Patents -->
+    <section id="patents">
+      <div class="section-title">
+        <h2>Patents</h2>
+        <span class="count">37</span>
+      </div>
+      <p class="section-lead">
+        Patents and applications across Korea, the PCT, and China — covering modular actuators,
+        spherical and parallel mechanisms, exoskeletons, and humanoid manipulators developed at
+        Hankook Mirae Technology and Dataa Robotics (Cloudminds).
+      </p>
+
+      <details open>
+        <summary><strong>Korea</strong> &middot; <span class="text-muted">12 patents</span></summary>
+        <ol class="patent-list">
+          <li><a href="https://doi.org/10.8080/1020150044028" target="_blank" rel="noopener">KR&nbsp;10-2015-0044028</a></li>
+          <li><a href="https://doi.org/10.8080/1020160047000" target="_blank" rel="noopener">KR&nbsp;10-2016-0047000</a></li>
+          <li><a href="https://doi.org/10.8080/1020160047012" target="_blank" rel="noopener">KR&nbsp;10-2016-0047012</a></li>
+          <li><a href="https://doi.org/10.8080/1020160047015" target="_blank" rel="noopener">KR&nbsp;10-2016-0047015</a></li>
+          <li><a href="https://doi.org/10.8080/1020170156393" target="_blank" rel="noopener">KR&nbsp;10-2017-0156393</a></li>
+          <li><a href="https://doi.org/10.8080/1020170157752" target="_blank" rel="noopener">KR&nbsp;10-2017-0157752</a></li>
+          <li><a href="https://doi.org/10.8080/1020170157753" target="_blank" rel="noopener">KR&nbsp;10-2017-0157753</a></li>
+          <li><a href="https://doi.org/10.8080/1020190089657" target="_blank" rel="noopener">KR&nbsp;10-2019-0089657</a></li>
+          <li><a href="https://doi.org/10.8080/1020190089658" target="_blank" rel="noopener">KR&nbsp;10-2019-0089658</a></li>
+          <li><a href="https://doi.org/10.8080/1020190089659" target="_blank" rel="noopener">KR&nbsp;10-2019-0089659</a></li>
+          <li><a href="https://doi.org/10.8080/1020210096122" target="_blank" rel="noopener">KR&nbsp;10-2021-0096122</a></li>
+          <li><a href="https://doi.org/10.8080/1020210097105" target="_blank" rel="noopener">KR&nbsp;10-2021-0097105</a></li>
+        </ol>
+      </details>
+
+      <details>
+        <summary><strong>PCT</strong> &middot; <span class="text-muted">6 applications</span></summary>
+        <ol class="patent-list">
+          <li>PCT/IB2019/050121 <span class="text-muted">&middot; filed 2019-01-08</span></li>
+          <li>PCT/IB2019/050122 <span class="text-muted">&middot; filed 2019-01-08</span></li>
+          <li>PCT/KR2019/010446 <span class="text-muted">&middot; filed 2019-08-16</span></li>
+          <li>PCT/KR2020/008194 <span class="text-muted">&middot; filed 2020-06-23</span></li>
+          <li>PCT/KR2020/008197 <span class="text-muted">&middot; filed 2020-06-23</span></li>
+          <li>PCT/KR2020/008198 <span class="text-muted">&middot; filed 2020-06-23</span></li>
+        </ol>
+      </details>
+
+      <details>
+        <summary><strong>China</strong> &middot; <span class="text-muted">19 patents</span></summary>
+        <ol class="patent-list">
+          <li>CN&nbsp;114104142&nbsp;A <span class="text-muted">&middot; App. CN202111676656.1</span></li>
+          <li>CN&nbsp;114227665&nbsp;A <span class="text-muted">&middot; App. CN202111602074.9</span></li>
+          <li>CN&nbsp;115990870&nbsp;A <span class="text-muted">&middot; App. CN202310077936.3</span></li>
+          <li>CN&nbsp;115990872&nbsp;A <span class="text-muted">&middot; App. CN202310071325.8</span></li>
+          <li>CN&nbsp;116000906&nbsp;A <span class="text-muted">&middot; App. CN202310071321.X</span></li>
+          <li>CN&nbsp;116038672&nbsp;A <span class="text-muted">&middot; App. CN202310077538.1</span></li>
+          <li>CN&nbsp;116142348&nbsp;A <span class="text-muted">&middot; App. CN202211739847.2</span></li>
+          <li>CN&nbsp;116331382&nbsp;A <span class="text-muted">&middot; App. CN202211740171.9</span></li>
+          <li>CN&nbsp;216401580&nbsp;U <span class="text-muted">&middot; App. CN202123340372.3</span></li>
+          <li>CN&nbsp;216401581&nbsp;U <span class="text-muted">&middot; App. CN202123367598.2</span></li>
+          <li>CN&nbsp;216401582&nbsp;U <span class="text-muted">&middot; App. CN202123441603.X</span></li>
+          <li>CN&nbsp;216410058&nbsp;U <span class="text-muted">&middot; App. CN202123442164.4</span></li>
+          <li>CN&nbsp;217294730&nbsp;U <span class="text-muted">&middot; App. CN202123447818.2</span></li>
+          <li>CN&nbsp;217703481&nbsp;U <span class="text-muted">&middot; App. CN202220492701.1</span></li>
+          <li>CN&nbsp;307233063&nbsp;S <span class="text-muted">&middot; App. CN202130864802.8</span></li>
+          <li>CN&nbsp;307245028&nbsp;S <span class="text-muted">&middot; App. CN202130869128.2</span></li>
+          <li>CN&nbsp;307280835&nbsp;S <span class="text-muted">&middot; App. CN202130862311.X</span></li>
+          <li>CN&nbsp;307280836&nbsp;S <span class="text-muted">&middot; App. CN202130862313.9</span></li>
+          <li>CN&nbsp;307436849&nbsp;S <span class="text-muted">&middot; App. CN202130883215.3</span></li>
+        </ol>
+      </details>
     </section>
   </main>
 
