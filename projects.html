@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Jaeho Noh</title>
+  <meta name="description" content="Research projects by Jaeho Noh, including a coaxial spherical parallel mechanism for life-sized robots." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230969da'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='55' font-family='sans-serif' font-weight='700' fill='white'%3EC%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-brand-dot" aria-hidden="true"></span>
+        <span>CauseIM</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="project-header">
+      <div class="eyebrow">Active Project</div>
+      <h1>Toward Most Agile and Cost Effective Life-sized Robot</h1>
+      <p class="subtitle">
+        A <strong>Coaxial Spherical Parallel Mechanism</strong> that centralizes four actuators at
+        the pelvis and distributes load equally across them — quadrupling effective strength and
+        extending gear life 64&times; without scaling up the motors.
+      </p>
+      <div class="badges">
+        <span class="badge accent">Parallel Mechanism</span>
+        <span class="badge">Bipedal Locomotion</span>
+        <span class="badge">Manipulator</span>
+        <span class="badge">Hardware Design</span>
+      </div>
+
+      <!-- Hero: full-body biped portrait render -->
+      <figure class="figure hero-photo">
+        <img src="assets/images/hero-biped.jpg" alt="Full-body bipedal prototype render" loading="eager">
+        <figcaption>Full-body bipedal prototype — pelvis-mounted actuator stack, parallel carbon-fiber links.</figcaption>
+      </figure>
+    </div>
+
+    <!-- Specs -->
+    <section id="specs">
+      <div class="section-title">
+        <h2>Headline Specs</h2>
+      </div>
+      <div class="specs">
+        <div class="spec">
+          <div class="spec-label">Actuators / Leg</div>
+          <div class="spec-value">4</div>
+        </div>
+        <div class="spec">
+          <div class="spec-label">Effective Strength</div>
+          <div class="spec-value">4&times;</div>
+        </div>
+        <div class="spec">
+          <div class="spec-label">Per-Gear Load</div>
+          <div class="spec-value">1/4</div>
+        </div>
+        <div class="spec">
+          <div class="spec-label">Gear Life Gain</div>
+          <div class="spec-value">64&times;</div>
+        </div>
+        <div class="spec">
+          <div class="spec-label">Target Leg Mass</div>
+          <div class="spec-value">&lt; 12 kg</div>
+        </div>
+        <div class="spec">
+          <div class="spec-label">Projected Biped Mass</div>
+          <div class="spec-value">~35 kg</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview">
+      <div class="section-title">
+        <h2>Overview</h2>
+      </div>
+      <p>
+        Life-sized legged robots are held back by a hard trade-off: bigger actuators make the limb
+        heavier, which demands even bigger actuators. The <strong>Coaxial Spherical Parallel
+        Mechanism</strong> breaks that cycle by <em>centralizing</em> all four actuators at the
+        pelvis and arranging their output axes coaxially so that every actuator contributes to
+        every direction of motion. Vertical, radial, and lateral load on the end effector is shared
+        equally — turning the "4 actuators per leg" count into real capability rather than mass.
+      </p>
+
+      <div class="callout">
+        <p>
+          <strong>Why it matters.</strong> When each gear sees only ¼ of the load, a Wöhler-style
+          fatigue model predicts gear life scales as (1/4)<sup>-3</sup> = <strong>64&times;</strong>.
+          The same mechanism also lets motor and gear sizes shrink — the limb gets lighter while
+          getting stronger.
+        </p>
+      </div>
+
+      <!-- Real CAD renderings of the mechanism -->
+      <figure class="figure">
+        <img src="assets/images/mechanism-closeup.jpg" alt="Close-up CAD render of the pelvis-mounted actuator stack and carbon-fiber parallel links">
+        <figcaption>Pelvis actuator cluster — four coaxial drives feeding carbon-fiber parallel links.</figcaption>
+      </figure>
+
+      <figure class="figure">
+        <img src="assets/images/leg-module-views.jpg" alt="Three angle views of a single Coaxial SPM leg module">
+        <figcaption>Leg module — three viewing angles of the same Coaxial SPM assembly.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Design -->
+    <section id="design">
+      <div class="section-title">
+        <h2>Design Principles</h2>
+      </div>
+      <ul class="feature-list">
+        <li><strong>Coaxial layout</strong> — all four actuator outputs are aligned on a common axis, so every actuator's torque projects onto the vertical direction during stance.</li>
+        <li><strong>Equal load distribution</strong> — vertical, radial, and lateral loads on the end effector are divided across the four actuators rather than carried by one.</li>
+        <li><strong>Centralized mass at the pelvis</strong> — lower limb inertia makes swing faster and modeling errors smaller for whole-body control.</li>
+        <li><strong>Thermal management</strong> — all heat-generating elements live in one location, simplifying cooling and cable routing.</li>
+        <li><strong>Analytic kinematics</strong> — despite being a parallel mechanism, the closed-form solution is as simple as a serial link, keeping control cheap.</li>
+      </ul>
+    </section>
+
+    <!-- NEW: Gear life section -->
+    <section id="gear-life">
+      <div class="section-title">
+        <h2>Gear-life Scaling</h2>
+      </div>
+      <p>
+        The load-sharing effect compounds through the gear's fatigue curve. A common Wöhler-style
+        S-N model for rolling-contact fatigue goes as N ∝ σ<sup>-3</sup>. Reducing the per-gear
+        stress to ¼ therefore multiplies the predicted cycles-to-failure by
+        (¼)<sup>-3</sup>&nbsp;=&nbsp;<strong>64</strong>. The same mechanism that quadruples
+        effective strength also buys roughly two orders of magnitude of service life without a
+        beefier actuator.
+      </p>
+
+    </section>
+
+    <!-- Performance Envelope (real measurement / simulation plots) -->
+    <section id="performance">
+      <div class="section-title">
+        <h2>Performance Envelope</h2>
+      </div>
+      <p>
+        Force capacity mapped across the leg's vertical workspace, split by limiting regime. The
+        <em>motor-limited</em> map bounds instantaneous capability at high joint speeds; the
+        <em>gear-limited</em> map bounds the sustainable, repeatable peak used for sizing.
+      </p>
+
+      <div class="photo-grid">
+        <figure class="figure light-bg">
+          <img src="assets/images/force-motor-limited.jpg" alt="Motor-limited peak force contour of a single leg at 240 deg/s, peak 150 kgf">
+          <figcaption>Motor-limited peak force @ 240°/s — instantaneous peak ≈ <strong>150 kgf</strong>.</figcaption>
+        </figure>
+        <figure class="figure light-bg">
+          <img src="assets/images/force-gear-limited.jpg" alt="Gear-limited peak force contour of a single leg at 60 deg/s, repeatable peak 300 kgf">
+          <figcaption>Gear-limited peak force @ 60°/s — repeatable peak ≈ <strong>300 kgf</strong>.</figcaption>
+        </figure>
+      </div>
+
+      <div class="photo-grid">
+        <figure class="figure light-bg">
+          <img src="assets/images/workspace-reach.jpg" alt="Reachable workspace volume of a single leg, rendered as a translucent blue dome around the leg">
+          <figcaption>Reachable workspace of a single leg — hemispherical volume around the pelvis.</figcaption>
+        </figure>
+        <figure class="figure light-bg">
+          <img src="assets/images/motor-torque-curves.jpg" alt="Torque-vs-angular-speed curves for the four motors of a single leg">
+          <figcaption>Operating-point sweep across the four motors — torque vs. angular speed.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Motion & Control -->
+    <section id="motion-control">
+      <div class="section-title">
+        <h2>Motion &amp; Control</h2>
+      </div>
+      <p>
+        Parallel pose sequences and closed-loop tracking from the simulator/rig. Because limb mass
+        is centralized at the pelvis, the dynamic model stays well-conditioned even at
+        high swing rates — tracking RMS stays tight across the six-second test window.
+      </p>
+
+      <figure class="figure">
+        <img src="assets/images/leg-stride-sequence.jpg" alt="Five side-view poses of a single leg across one stride">
+        <figcaption>Leg stride — five poses across one cycle of the gait primitive.</figcaption>
+      </figure>
+
+      <figure class="figure">
+        <img src="assets/images/biped-poses.jpg" alt="Four side-view configurations of the full biped assembly">
+        <figcaption>Full biped — four representative stance/swing configurations.</figcaption>
+      </figure>
+
+      <figure class="figure light-bg">
+        <img src="assets/images/control-tracking.jpg" alt="Three-panel control result: Cartesian tracking, joint-angle tracking, and 3D path trace of actual vs desired">
+        <figcaption>Closed-loop tracking — Cartesian pose (left), joint angles θ₁–θ₄ (center), and 3D end-effector trace of desired vs. actual (right).</figcaption>
+      </figure>
+    </section>
+
+    <!-- Video showcase -->
+    <section id="video">
+      <div class="section-title">
+        <h2>Prototype in Motion</h2>
+      </div>
+      <p class="section-lead">Short showcase videos from the legacy project site.</p>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/qmU83sIORDQ" title="CauseIM robot demo 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/vlBgMg9WFfA" title="CauseIM robot demo 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Applications -->
+    <section id="applications">
+      <div class="section-title">
+        <h2>Applications</h2>
+      </div>
+
+      <article class="card">
+        <h3>1. Bipedal Robot</h3>
+        <p>
+          Each leg is a 4-DOF Coaxial SPM. Because mass is centralized near the body, whole-body
+          dynamics have lower modeling error and control can run at short computation horizons
+          despite the parallel structure. Continuous Ground Reaction Force in some regions reaches
+          twice the projected body weight — giving useful margin for jumping and perturbation
+          recovery.
+        </p>
+        <div class="badges" style="margin-top: 0.5rem;">
+          <span class="badge">4 DOF / leg</span>
+          <span class="badge">GRF &gt; 2&times; body weight</span>
+          <span class="badge">~35 kg biped target</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>2. Robot Arm &amp; Manipulator</h3>
+        <p>
+          Using the same mechanism as a manipulator, payload is amplified 4&times; versus a
+          single-actuator baseline while moving-part mass is reduced. Capacity exceeds 40 kg across
+          the full workspace. The design favors serviceability: only 14 bolts to disassemble the
+          arm, and 6 to remove an actuator set.
+        </p>
+        <div class="badges" style="margin-top: 0.5rem;">
+          <span class="badge">&gt; 40 kg payload</span>
+          <span class="badge">4&times; payload amplification</span>
+          <span class="badge">14-bolt teardown</span>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Related publication -->
+    <section id="related-pub">
+      <div class="section-title">
+        <h2>Related Publication</h2>
+      </div>
+      <article class="card pub">
+        <div class="pub-thumb placeholder" aria-hidden="true">TBD</div>
+        <div class="pub-body">
+          <h3>A Coaxial Spherical Parallel Mechanism for Agile Life-sized Robotics</h3>
+          <p class="pub-authors"><span class="me">Jaeho Noh</span></p>
+          <p class="pub-venue">Manuscript in preparation &middot; 2026</p>
+          <div class="pub-actions">
+            <span class="pub-tag in-progress">In preparation</span>
+            <a href="publications.html" class="pub-tag">Details &rarr;</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact-cta">
+      <div class="section-title">
+        <h2>Want to know more?</h2>
+      </div>
+      <p>
+        The hardware, videos, and write-ups are being actively updated. If you're interested in
+        collaborating, integrating the mechanism into your platform, or just want a deeper
+        technical walkthrough, send an email.
+      </p>
+      <div class="hero-links" style="margin-top:1rem;">
+        <a class="icon-link" href="mailto:causeim@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          causeim@gmail.com
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year">2026</span> CauseIM &middot; <a href="https://sites.google.com/view/causeim" target="_blank" rel="noopener">Legacy site</a></p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
