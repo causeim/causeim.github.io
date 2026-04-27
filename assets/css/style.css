@@ -936,6 +936,23 @@ section + section {
   text-decoration: underline;
 }
 
+.patent-status {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.05rem 0.45rem;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--success);
+  background: color-mix(in srgb, var(--success) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--success) 35%, transparent);
+  border-radius: 10px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
 /* ---------- Photo figures (CAD renders, plots) ----------
    CAD renders use a black background. Wrap each image in a dark "mat" so
    the black edges of the render blend into the figure frame instead of
@@ -1155,25 +1172,4 @@ section + section {
   }
 
   .nav-links.open { display: flex; }
-  .nav-links a { display: block; padding: 0.6rem 0.9rem; }
-
-  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
-
-  .project-header h1 { font-size: 1.875rem; }
-}
-
-/* ---------- Utilities ---------- */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.text-muted { color: var(--text-muted); }
-.small { font-size: 0.875rem; }
+  .nav-links a { d
