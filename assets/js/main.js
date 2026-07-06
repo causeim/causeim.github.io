@@ -127,4 +127,20 @@
       if (href === path) a.classList.add("active");
     });
   } catch (e) {}
+
+  // ---------- Site view counter (GoatCounter public counter) ----------
+  // Requires "Public statistics" or the counter endpoint enabled on
+  // https://causeim.goatcounter.com/settings/main
+  var counterEl = document.getElementById("site-views");
+  if (counterEl && "fetch" in window) {
+    fetch("https://causeim.goatcounter.com/counter/TOTAL.json", { mode: "cors" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!data) return;
+        // GoatCounter returns { count: "N", count_unique: "M" } (strings)
+        var n = parseInt(data.count_unique || data.count || "0", 10);
+        if (!isNaN(n)) counterEl.textContent = n.toLocaleString();
+      })
+      .catch(function () { /* silently fail — counter stays as '—' */ });
+  }
 })();
