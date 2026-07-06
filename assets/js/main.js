@@ -143,4 +143,5 @@
       })
       .catch(function () { /* silently fail — counter stays as '—' */ });
   }
-})();
+
+  // 
