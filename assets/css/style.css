@@ -1231,29 +1231,25 @@ section + section {
 .paper-clicks {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.15rem 0.55rem;
-  border: 1px solid var(--border);
+  gap: 0.35rem;
+  padding: 0.15rem 0.6rem;
+  border: 1px dashed var(--border);
   border-radius: 20px;
-  font-size: 0.72rem;
-  color: var(--text-muted);
+  font-size: 0.7rem;
+  color: var(--text-subtle);
   font-variant-numeric: tabular-nums;
-  font-weight: 500;
-  transition: border-color 0.15s ease, color 0.15s ease;
+  line-height: 1.4;
   cursor: default;
+  transition: border-color 0.15s ease, color 0.15s ease;
+  vertical-align: middle;
 }
 
 .paper-clicks:hover {
   border-color: var(--text-subtle);
-  color: var(--text);
-}
-
-.paper-clicks svg {
-  width: 12px;
-  height: 12px;
-  opacity: 0.75;
+  color: var(--text-muted);
 }
 
 .paper-clicks .paper-clicks-count {
   font-weight: 600;
+  color: var(--text);
 }
