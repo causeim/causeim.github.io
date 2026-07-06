@@ -1225,3 +1225,35 @@ section + section {
 
 .text-muted { color: var(--text-muted); }
 .small { font-size: 0.875rem; }
+
+
+/* ---------- Per-paper click counter badge ---------- */
+.paper-clicks {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  transition: border-color 0.15s ease, color 0.15s ease;
+  cursor: default;
+}
+
+.paper-clicks:hover {
+  border-color: var(--text-subtle);
+  color: var(--text);
+}
+
+.paper-clicks svg {
+  width: 12px;
+  height: 12px;
+  opacity: 0.75;
+}
+
+.paper-clicks .paper-clicks-count {
+  font-weight: 600;
+}

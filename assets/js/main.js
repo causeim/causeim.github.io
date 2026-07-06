@@ -180,4 +180,27 @@
     var paperId = link.getAttribute("data-track-paper");
     if (paperId) trackPaperClick(paperId);
   }, true);
+
+  // ---------- Per-paper click count display ----------
+  // Each <span class="paper-clicks" data-paper-id="ID"> shows the total
+  // click count fetched from GoatCounter's public counter endpoint.
+  // Requires "Public statistics" enabled in GoatCounter settings.
+  document.querySelectorAll(".paper-clicks[data-paper-id]").forEach(function (el) {
+    var id = el.getAttribute("data-paper-id");
+    if (!id || !("fetch" in window)) return;
+    var url = "https://causeim.goatcounter.com/counter/paper-click/" +
+              encodeURIComponent(id) + ".json";
+    fetch(url, { mode: "cors" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!data) return;
+        var raw = data.count_unique || data.count || "0";
+        var n = parseInt(String(raw).replace(/[^0-9]/g, ""), 10);
+        if (isNaN(n)) return;
+        var countEl = el.querySelector(".paper-clicks-count");
+        if (countEl) countEl.textContent = n.toLocaleString();
+      })
+      .catch(function () { /* silently keep '—' */ });
+  });
+
 })();
