@@ -143,5 +143,41 @@
       })
       .catch(function () { /* silently fail — counter stays as '—' */ });
   }
+  // ---------- Per-paper click tracking (GoatCounter events) ----------
+  // Every <a data-track-paper="ID"> fires a GoatCounter event on click.
+  // Events show up in the GoatCounter dashboard under "Paths" prefixed
+  // with 'paper-click/'.
+  //
+  // Strategy: prefer window.goatcounter.count() (loaded by count.js) so
+  // GoatCounter's own encoding + endpoint handling is used. Fall back to
+  // a GET Image beacon with e=t (the standard "this is an event" flag).
+  function trackPaperClick(paperId) {
+    var path = "paper-click/" + paperId;
+    var title = "Paper click: " + paperId;
 
-  // 
+    // Preferred: use GoatCounter's own count() (same code path as pageviews)
+    if (window.goatcounter && typeof window.goatcounter.count === "function") {
+      try {
+        window.goatcounter.count({ path: path, title: title, event: true });
+        return;
+      } catch (e) { /* fall through */ }
+    }
+
+    // Fallback: GET Image beacon (works cross-origin without CORS issues)
+    try {
+      var q = "p=" + encodeURIComponent(path) +
+              "&t=" + encodeURIComponent(title) +
+              "&e=t" +
+              "&rnd=" + Math.random().toString(36).slice(2);
+      var img = new Image(1, 1);
+      img.src = "https://causeim.goatcounter.com/count?" + q;
+    } catch (e) { /* ignore */ }
+  }
+
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest("a[data-track-paper]");
+    if (!link) return;
+    var paperId = link.getAttribute("data-track-paper");
+    if (paperId) trackPaperClick(paperId);
+  }, true);
+})();
